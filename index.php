@@ -16,8 +16,8 @@ $api = new Binance\API();
 //echo "Price of BNB: {$price} BTC.\n";
 
 $ticker = $api->prices();
-echo "BTC: {$ticker['BTCUSDT']}"\n;
-echo "LUNA: {$ticker['LUNABTC']}"\n;
+echo "BTC: {$ticker['BTCUSDT']}\n";
+echo "LUNA: {$ticker['LUNABTC']}";
 // Now keep $ticker object updated:
 // $api->miniTicker(function($api, $miniTicker) {
 //     global $ticker;
