@@ -7,7 +7,7 @@ require 'php-binance-api.php';
 $api = new Binance\API();
 
 // Get latest price of all symbols
-$tickers = $api->prices();
+//$tickers = $api->prices();
 //print_r($tickers); // List prices of all symbols
 
 // Get latest price of a symbol
@@ -15,8 +15,14 @@ $tickers = $api->prices();
 //$price = $api->price('LUNABTC');
 //echo "Price of BNB: {$price} BTC.\n";
 
-foreach ($tickers['items'] as $api)
-{
-    echo "items:". $api['ETHBTC'] ."\n";
-};
-
+$ticker = $api->prices();
+echo "price of BTC: {$ticker['BTCUSDT']}\n";
+// Now keep $ticker object updated:
+$api->miniTicker(function($api, $miniTicker) {
+    global $ticker;
+    foreach ( $miniTicker as $obj ) {
+        $ticker[$obj['symbol']] = $obj['close'];
+    }
+    echo "price of BTC: {$ticker['BTCUSDT']}\n";
+});
+// Now you can use $ticker[$symbol] anywhere in your program.
