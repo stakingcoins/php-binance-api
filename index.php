@@ -11,10 +11,7 @@ $api = new Binance\API();
 //print_r($tickers); // List prices of all symbols
 
 // Get latest price of a symbol
-$price = $api->price('BNBBTC');
+$price = $api->price('BNBBTC','LUNABTC');
 echo "Price of BNB: {$price} BTC.\n";
 
 
-$api->miniTicker(function($api, $ticker) {
-	print_r($ticker);
-});
