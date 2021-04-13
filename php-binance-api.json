@@ -1,1 +1,10 @@
-
+{
+    "api-key": "<testnet api key>",
+    "api-secret": "<testnet secret>",
+    "use-testnet": true
+  "curlOpts": {
+	    "CURLOPT_SSL_VERIFYPEER": 0,
+	    "INVALID_CONSTANT_NAME": 42
+    }
+}
+EOF
