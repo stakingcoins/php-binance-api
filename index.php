@@ -12,6 +12,4 @@ $api = new Binance\API();
 
 // Get latest price of a symbol
 $price = $api->price('BNBBTC');
-//echo "Price of BNB: {$price} BTC.\n";
-echo "Price of BNB: {$price} BTC.\n".PHP_EOL;
-
+echo "Price of BNB: {$price} BTC.\n";
