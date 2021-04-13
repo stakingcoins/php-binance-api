@@ -190,8 +190,7 @@ class API
             return;
         }
         if (file_exists($file) === false) {
-            echo "Unable to load config from: " . $file . PHP_EOL;
-            echo "No proxies will be used " . PHP_EOL;
+            
             return;
         }
         $contents = json_decode(file_get_contents($file), true);
