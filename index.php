@@ -15,6 +15,6 @@ $price = $api->price('BNBBTC');
 echo "Price of BNB: {$price} BTC.\n";
 
 
-$api->ticker("LUNABTC", function($api, $symbol, $ticker) {
+$api->miniTicker(function($api, $ticker) {
 	print_r($ticker);
 });
