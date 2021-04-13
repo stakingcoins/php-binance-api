@@ -7,8 +7,8 @@ require '../php-binance-api.php';
 $api = new Binance\API();
 
 // Get latest price of all symbols
-$tickers = $api->prices();
-print_r($tickers); // List prices of all symbols
+//$tickers = $api->prices();
+//print_r($tickers); // List prices of all symbols
 
 // Get latest price of a symbol
 $price = $api->price('BNBBTC');
