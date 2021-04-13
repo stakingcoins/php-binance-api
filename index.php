@@ -17,12 +17,13 @@ $api = new Binance\API();
 
 $ticker = $api->prices();
 echo "price of BTC: {$ticker['BTCUSDT']}\n";
+echo "price of BTC: {$ticker['LUNABTC']}\n";
 // Now keep $ticker object updated:
-$api->miniTicker(function($api, $miniTicker) {
-    global $ticker;
-    foreach ( $miniTicker as $obj ) {
-        $ticker[$obj['symbol']] = $obj['close'];
-    }
-    echo "price of BTC: {$ticker['BTCUSDT']}\n";
-});
-// Now you can use $ticker[$symbol] anywhere in your program.
+// $api->miniTicker(function($api, $miniTicker) {
+//     global $ticker;
+//     foreach ( $miniTicker as $obj ) {
+//         $ticker[$obj['symbol']] = $obj['close'];
+//     }
+//     echo "price of BTC: {$ticker['BTCUSDT']}\n";
+// });
+// // Now you can use $ticker[$symbol] anywhere in your program.
