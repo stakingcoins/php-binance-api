@@ -143,8 +143,8 @@ class API
             return;
         }
         if (file_exists($file) === false) {
-            echo "Unable to load config from: " . $file . PHP_EOL;
-            echo "Detected no API KEY or SECRET, all signed requests will fail" . PHP_EOL;
+            echo "" . $file;
+            echo "";
             return;
         }
         $contents = json_decode(file_get_contents($file), true);
