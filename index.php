@@ -1,5 +1,4 @@
 <?php
-error_reporting(0); // disable errors
 
 require 'php-binance-api.php';
 
@@ -13,5 +12,9 @@ $api = new Binance\API();
 
 // Get latest price of a symbol
 $price = $api->price('BNBBTC');
-//echo "Price of BNB: {$price} BTC.\n";
-echo "Price of BNB: {$price} BTC.".PHP_EOL;
+echo "Price of BNB: {$price} BTC.\n";
+
+
+$api->ticker("LUNABTC", function($api, $symbol, $ticker) {
+	print_r($ticker);
+});
